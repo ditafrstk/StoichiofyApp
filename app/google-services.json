@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "602457129515",
+    "project_id": "stoichiofyapp-4acdd",
+    "storage_bucket": "stoichiofyapp-4acdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602457129515:android:87404fc58b52147bd2606e",
+        "android_client_info": {
+          "package_name": "com.uin.stoichiofyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602457129515-uclva8f71ag538j9bv67q3uk7depinop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD4sU5QFh_0x19GbyiNX_XukCXWoLutjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602457129515-uclva8f71ag538j9bv67q3uk7depinop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

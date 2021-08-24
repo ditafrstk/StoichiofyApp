@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorLightWhite">
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic__arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_daftar_materi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/raleway_bold"
+        android:text="Daftar Materi"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_daftar_materi">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/bg_card1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:gravity="center"
+                    android:text="BAB I"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Pendahuluan"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Ilmuwan Muslim Kimia  "
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Stoikiometri Reaksi  "
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/bg_card2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:gravity="center"
+                    android:text="BAB II"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="80dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Persamaan Reaksi Kimia Dalam Perspektif Islam"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Sejarah dan Proses Terjadinya  "
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Persamaan Reaksi  "
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/bg_card3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:gravity="center"
+                    android:text="BAB III"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Pereaksi Pembatas"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Reaksi Pembatas dalam Perspektif Islam  "
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/bg_card4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:gravity="center"
+                    android:text="BAB II"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Hukum Dasar Kimia"
+                    android:textColor="@color/ColorWhite"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Hukum dan Sejarah Hukum  "
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/shape_background_blue"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="  Prinsip Hukum  "
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

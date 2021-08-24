@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Stoichiofy</string>
+    <string name="memulai">Memulai</string>
+    <string name="selamat_datang">Selamat Datang di\nStoichiofy</string>
+    <string name="describe_on_boarding_1">Semua yang kamu butuhkan untuk\nbelajar Stoikiometri, dalam satu aplikasi.</string>
+    <string name="describe_on_boarding_2">Aplikasi ini adalah aplikasi pendukung \npembelajaran pada buku pengayaan \n“Stoikiometri Dalam Perspektif Islam”</string>
+    <string name="describe_sign_in">Already have an account?</string>
+    <string name="describe_sign_up">Belum punya akun?</string>
+    <string name="search_desc">Ayo, cari materi belajar disini...</string>
+    <string name="sign_in">Sign In</string>
+    <string name="name">Dita</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_back">Welcome Back,\nExplorer!</string>
+    <string name="username">Username</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create New\nYour Account</string>
+    <string name="fullname">Full Name</string>
+    <string name="search" />
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
