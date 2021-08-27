@@ -15,7 +15,7 @@ class OnBoardingOneActivity : AppCompatActivity() {
 
         btn_next.setOnClickListener {
             val intent = Intent(this@OnBoardingOneActivity,
-                OnBoardingTwoActivity::class.java)
+            OnBoardingTwoActivity::class.java)
             startActivity(intent)
         }
     }
