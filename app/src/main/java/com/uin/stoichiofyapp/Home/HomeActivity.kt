@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.uin.stoichiofyapp.Dashboard.DashboardFragment
+import com.uin.stoichiofyapp.Profile.ProfileFragment
 import com.uin.stoichiofyapp.R
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -14,6 +15,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val fragmentHome = DashboardFragment()
+        val fragmentProfile = ProfileFragment()
 
         setFragment(fragmentHome)
 
@@ -25,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         iv_menu2.setOnClickListener {
-            setFragment(fragmentHome)
+            setFragment(fragmentProfile)
 
             changeIcon(iv_menu1, R.drawable.ic_menu_home)
             changeIcon(iv_menu2, R.drawable.ic_menu_profile)

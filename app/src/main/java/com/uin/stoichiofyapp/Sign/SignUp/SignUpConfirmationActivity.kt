@@ -112,9 +112,9 @@ class SignUpConfirmationActivity : AppCompatActivity() , PermissionListener {
 //
 //
 //                            Log.v("dapat", "url" + it.toString())
-
-
-
+//
+//
+//
 //                        finishAffinity()
 //                        val intent = Intent (this@RegisterPhotoscreenActivity,
 //                            HomeActivity::class.java).putExtra("user", intent.getStringExtra("user"))
@@ -171,11 +171,6 @@ class SignUpConfirmationActivity : AppCompatActivity() , PermissionListener {
 
 
     override fun onPermissionGranted(response: PermissionGrantedResponse?) {
-//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-//            takePictureIntent.resolveActivity(packageManager)?.also {
-//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-//            }
-//        }
         // Use Gallery and Camera
         ImagePicker.with(this)
             .provider(ImageProvider.BOTH)

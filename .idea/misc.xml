@@ -3,11 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/drawable/bg_radius.xml" value="0.3828125" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/drawable/bg_transparent.xml" value="0.3828125" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/drawable/ic_btn_delete.xml" value="0.3769230769230769" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/drawable/ic_cv_purple.xml" value="0.18703703703703703" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/drawable/ic_logo_uin.xml" value="0.3828125" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_about_us.xml" value="0.2869198312236287" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_add.xml" value="0.36666666666666664" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_confirm.xml" value="0.2" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_on_boarding_one.xml" value="0.16530797101449277" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_on_boarding_two.xml" value="0.16530797101449277" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_peta.xml" value="0.14791666666666667" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_peta_konsep.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_polactivity.xml" value="0.13385416666666666" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_referensi.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_sign_up.xml" value="0.5" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_silabus.xml" value="0.14791666666666667" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_dashboard.xml" value="0.16530797101449277" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_profile.xml" value="0.26485568760611206" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_sub_materi.xml" value="0.17831813576494426" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_about_us.xml" value="0.67" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_home_one.xml" value="0.6642857142857143" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_home_two.xml" value="0.67" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_list.xml" value="0.17831813576494426" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_materi.xml" value="0.17831813576494426" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/sub_materi.xml" value="0.17831813576494426" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/menu/bottomappbar_menu.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>

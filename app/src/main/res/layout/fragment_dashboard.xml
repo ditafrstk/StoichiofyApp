@@ -57,18 +57,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="360dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:queryHint="Ayo, cari materi belajar disini..."
-            android:theme="@style/SearchView"
-            android:iconifiedByDefault="false"
-            android:background="@drawable/shape_rectangle_search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
             android:id="@+id/textView25"
@@ -81,7 +69,7 @@
             android:textColor="@color/ColorWhite"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home"
@@ -122,11 +110,13 @@
                 android:id="@+id/rv_dashboard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="48dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
                 android:clipToPadding="false"
                 android:paddingTop="10dp"
                 android:paddingBottom="90dp"
-                tools:listitem="@layout/item_home_one"/>
+                tools:listitem="@layout/item_home_one" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
