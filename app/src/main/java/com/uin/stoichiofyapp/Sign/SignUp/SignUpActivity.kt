@@ -119,7 +119,7 @@ class SignUpActivity : AppCompatActivity() {
 
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@SignUpActivity, "Berhasil", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@SignUpActivity, "Username sudah terpakai", Toast.LENGTH_LONG).show()
                 }
             }
 
