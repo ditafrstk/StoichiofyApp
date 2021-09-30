@@ -1,16 +1,17 @@
-package com.uin.stoichiofyapp.AboutUs
+package com.uin.stoichiofyapp.PLO
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.uin.stoichiofyapp.AboutUs.getAbout
 import com.uin.stoichiofyapp.R
 import kotlinx.android.synthetic.main.item_about_us.view.*
 
-class AboutUsAdapter(private var data: List<getAbout>,
-                     private val listener: (getAbout) -> Unit)
-    : RecyclerView.Adapter<AboutUsAdapter.ViewHolder>() {
+class PLOAdapter(private var data: List<getAbout>,
+                 private val listener: (getAbout) -> Unit)
+    : RecyclerView.Adapter<PLOAdapter.ViewHolder>() {
 
     lateinit var  contextAdapter: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

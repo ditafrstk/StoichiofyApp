@@ -10,10 +10,12 @@ import kotlinx.android.synthetic.main.activity_add.*
 class AddActivity : AppCompatActivity() {
 
     val database = FirebaseDatabase.getInstance()
-    val myRef = database.getReference("About")
+    val myRef = database.getReference("Materi").push()
+        .child("Bab 4")
     val arrayUser = arrayListOf<addAbout>()
 
     lateinit var addData : String
+    lateinit var addData2: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class AddActivity : AppCompatActivity() {
 
         btn_add.setOnClickListener {
             addData = et_data.text.toString()
+//            addData2 = et_data2.text.toString()
 
             addingPudding(addData)
             Toast.makeText(applicationContext, "Berhasil", Toast.LENGTH_SHORT).show()
@@ -33,9 +36,9 @@ class AddActivity : AppCompatActivity() {
 
 
 
-    private fun addingPudding(desc: String){
+    private fun addingPudding(desc1: String){
         val pudding = addAbout(
-            desc
+            desc1
         )
         myRef.push().setValue(pudding)
     }

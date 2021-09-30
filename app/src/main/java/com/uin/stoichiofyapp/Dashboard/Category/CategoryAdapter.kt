@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.uin.stoichiofyapp.Dashboard.Pembelajaran.Category
+import com.uin.stoichiofyapp.Latihan.LatihanActivity
+import com.uin.stoichiofyapp.Materi.MateriActivity
 import com.uin.stoichiofyapp.R
 import com.uin.stoichiofyapp.ReferensiActivity
 import kotlinx.android.synthetic.main.item_home_one.view.*
 
-class MateriAdapter(private var data: List<Category>,
-                    private val listener: (Category) -> Unit)
+class CategoryAdapter(private var data: List<Category>)
     : RecyclerView.Adapter<DashboardHolder>() {
 
     lateinit var contextAdapter : Context
@@ -28,7 +29,7 @@ class MateriAdapter(private var data: List<Category>,
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: DashboardHolder, position: Int) {
-        holder.bindItem(data[position], listener, contextAdapter)
+        holder.bindItem(data[position], contextAdapter)
     }
 }
 
@@ -38,7 +39,7 @@ class MateriAdapter(private var data: List<Category>,
 
 
 
-        fun bindItem(data: Category, listener: (Category) -> Unit, context: Context) {
+        fun bindItem(data: Category, context: Context) {
             tvCategory.text = data.agenda
 
             Glide.with(context)
@@ -47,10 +48,14 @@ class MateriAdapter(private var data: List<Category>,
 
             when(data.agenda) {
                 "Materi" -> {
-
+                    itemView.setOnClickListener {
+                        context.startActivity(Intent(context, MateriActivity::class.java))
+                    }
                 }
                 "Latihan" -> {
-
+                    itemView.setOnClickListener {
+                        context.startActivity(Intent(context, LatihanActivity::class.java))
+                    }
                 }
                 "Referensi" -> {
                     itemView.setOnClickListener {

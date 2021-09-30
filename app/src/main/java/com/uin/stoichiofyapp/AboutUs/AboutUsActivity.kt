@@ -2,12 +2,11 @@ package com.uin.stoichiofyapp.AboutUs
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.google.protobuf.Value
+import com.uin.stoichiofyapp.PLO.PLOAdapter
 import com.uin.stoichiofyapp.R
 import kotlinx.android.synthetic.main.activity_about_us.*
 
@@ -38,7 +37,6 @@ class AboutUsActivity : AppCompatActivity() {
                 dataAboutUs.clear()
                 for(dataSnapshot in snapshot.children){
                     val about = dataSnapshot.getValue(getAbout::class.java)
-                    Log.v("15112", about.toString())
                     val key = dataSnapshot.key.toString()
                     val data = about?.desc
 
@@ -46,7 +44,7 @@ class AboutUsActivity : AppCompatActivity() {
                 }
 
                 if (dataAboutUs.isNotEmpty()){
-                    rv_aboutUs.adapter = AboutUsAdapter(dataAboutUs){
+                    rv_aboutUs.adapter = PLOAdapter(dataAboutUs){
 
                     }
                 }

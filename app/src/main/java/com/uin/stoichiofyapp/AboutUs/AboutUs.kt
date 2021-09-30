@@ -13,5 +13,6 @@ data class getAbout (
 
 @Parcelize
 data class addAbout (
-    var desc: String ?= ""
+    var url: String ?= ""
+//    var desc2: String ?= ""
         ) : Parcelable

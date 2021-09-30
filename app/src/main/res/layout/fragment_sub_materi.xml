@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/iv_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="32dp"
@@ -25,10 +25,11 @@
             android:textColor="@color/colorGrey" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginEnd="148dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/raleway_semibold"
             android:text="Persamaan \nReaksi Kimia Dalam \nPerspektif Islam"
@@ -36,7 +37,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/tvBab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"

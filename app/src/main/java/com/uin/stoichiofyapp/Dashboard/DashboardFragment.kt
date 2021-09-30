@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.database.*
-import com.uin.stoichiofyapp.Dashboard.Category.MateriAdapter
+import com.uin.stoichiofyapp.Dashboard.Category.CategoryAdapter
 import com.uin.stoichiofyapp.Dashboard.Category.Pembelajaran
 import com.uin.stoichiofyapp.Dashboard.Pembelajaran.Category
-import com.uin.stoichiofyapp.Dashboard.Pembelajaran.CategoryAdapter
+import com.uin.stoichiofyapp.Dashboard.Pembelajaran.PembelajaranAdapter
 import com.uin.stoichiofyapp.R
 import com.uin.stoichiofyapp.Utils.Preferences
 import kotlinx.android.synthetic.main.fragment_dashboard.*
@@ -70,7 +70,7 @@ class DashboardFragment : Fragment() {
                     dataPembelajaran.add(setData(agenda!!,image!!))
                 }
 
-                rv_home.adapter = CategoryAdapter(dataPembelajaran){
+                rv_home.adapter = PembelajaranAdapter(dataPembelajaran){
 
                 }
             }
@@ -92,9 +92,9 @@ class DashboardFragment : Fragment() {
                     dataCategory.add(setDataCategory(agenda!!,image!!))
                 }
 
-                rv_dashboard.adapter = MateriAdapter(dataCategory){
+                rv_dashboard.adapter = CategoryAdapter(dataCategory)
 
-                }
+
             }
 
             override fun onCancelled(error: DatabaseError) {

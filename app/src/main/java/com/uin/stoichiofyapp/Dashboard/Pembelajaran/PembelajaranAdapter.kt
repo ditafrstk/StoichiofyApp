@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.uin.stoichiofyapp.Dashboard.Category.Pembelajaran
 import com.uin.stoichiofyapp.Peta.PetaKonsepActivity
-import com.uin.stoichiofyapp.POL.POLActivity
+import com.uin.stoichiofyapp.PLO.PLOActivity
 import com.uin.stoichiofyapp.R
 import com.uin.stoichiofyapp.Silabus.SilabusActivity
 import kotlinx.android.synthetic.main.item_home_two.view.*
 
-class CategoryAdapter(private var data: List<Pembelajaran>,
-                      private val listener: (Pembelajaran) -> Unit)
-: RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
+class PembelajaranAdapter(private var data: List<Pembelajaran>,
+                          private val listener: (Pembelajaran) -> Unit)
+: RecyclerView.Adapter<PembelajaranAdapter.CategoryHolder>() {
 
 
     lateinit var contextAdapter : Context
@@ -60,7 +60,7 @@ class CategoryAdapter(private var data: List<Pembelajaran>,
                 "Program Learning Outcome" -> {
                     itemView.setOnClickListener {
                         val intent = Intent(context,
-                            POLActivity::class.java)
+                            PLOActivity::class.java)
                         listener(data)
                         context.startActivity(intent)
                     }

@@ -25,6 +25,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
         <activity
+            android:name=".Latihan.ResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Latihan.LatihanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Materi.bab.showBabActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Materi.bab.BabActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Materi.MateriActivity"
+            android:exported="true" />
+        <activity
             android:name=".ReferensiActivity"
             android:exported="true" />
         <activity
@@ -43,7 +58,7 @@
             android:name=".Silabus.SilabusActivity"
             android:exported="true" />
         <activity
-            android:name=".POL.POLActivity"
+            android:name=".PLO.PLOActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
