@@ -1,11 +1,21 @@
 package com.uin.stoichiofyapp.Latihan
 
+import android.hardware.lights.Light
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.TextUnit
+
 object Constants {
 
 
     const val TOTAL_QUESTIONS: String = "total_question"
     const val CORRECT_ANWERS: String = "correct_answers"
-
 
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()

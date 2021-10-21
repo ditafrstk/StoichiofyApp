@@ -11,6 +11,7 @@ import com.google.firebase.database.*
 import com.uin.stoichiofyapp.AboutUs.getAbout
 import com.uin.stoichiofyapp.R
 import kotlinx.android.synthetic.main.activity_about_us.*
+import kotlinx.android.synthetic.main.activity_polactivity.*
 
 class PLOActivity : AppCompatActivity() {
 

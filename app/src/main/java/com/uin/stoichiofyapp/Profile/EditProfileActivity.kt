@@ -100,69 +100,39 @@ class EditProfileActivity : AppCompatActivity(), PermissionListener {
                 progressDialog.setTitle("Menambahkan Data...")
                 progressDialog.show()
 
+                mDatabase = FirebaseDatabase.getInstance().getReference("User")
+                    .child(preferences.getValues("username")!!)
 
-                val ref = storageReference.child("images/"+ UUID.randomUUID().toString())
-                ref.putFile(filePath)
-                    .addOnSuccessListener {
-                        progressDialog.dismiss()
-                        Toast.makeText(this@EditProfileActivity,"Uploaded",
-                            Toast.LENGTH_SHORT).show()
+                val hashMap: HashMap<String, String> = HashMap()
+                hashMap["nama"] = updateNama
+                hashMap["email"] = updateEmail
+                hashMap["password"] = updatePassword
 
-                        mDatabase = FirebaseDatabase.getInstance().getReference("User")
-                            .child(preferences.getValues("username")!!)
+                preferences.setValues("nama", updateNama)
+                preferences.setValues("email", updateEmail)
+                preferences.setValues("password", updatePassword)
 
-
-                        ref.downloadUrl.addOnSuccessListener {
-                            val hashMap: HashMap<String, String> = HashMap()
-                            hashMap["url"] = it.toString()
-                            preferences.setValues("url", it.toString())
-                            hashMap["nama"] = updateNama
-                            hashMap["email"] = updateEmail
-                            hashMap["password"] = updatePassword
-
-                            preferences.setValues("nama", updateNama)
-                            preferences.setValues("email", updateEmail)
-                            preferences.setValues("password", updatePassword)
-
-                            mDatabase.updateChildren(hashMap as Map<String, Any>)
-                        }
+                mDatabase.updateChildren(hashMap as Map<String, Any>)
+                finishAffinity()
+                val intent = Intent (this@EditProfileActivity,
+                    HomeActivity::class.java).putExtra("user", intent.getStringExtra("user"))
+                startActivity(intent)
 
 
-                        finishAffinity()
-                        val intent = Intent (this@EditProfileActivity,
-                            HomeActivity::class.java).putExtra("user", intent.getStringExtra("user"))
-                        startActivity(intent)
-
-
-                    }
-                    .addOnFailureListener { e ->
-                        progressDialog.dismiss()
-                        Toast.makeText(this@EditProfileActivity,
-                            "Failed"+ e.message, Toast.LENGTH_SHORT).show()
-                    }
-                    .addOnProgressListener { taskSnapshot ->
-                        val progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot
-                            .totalByteCount
-                        progressDialog.setMessage("Uploaded " + progress.toInt() + "%")
-                    }
             }
         }
 
         btn_add.setOnClickListener {
             if (statusAdd) {
                 statusAdd = false
-                btn_save.visibility = View.INVISIBLE
 
                 iv_add.setImageResource(R.drawable.btn_add_photo)
-
-                img_profile.setImageResource(R.drawable.user_pic)
             } else {
                 Dexter.withActivity(this)
                     .withPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE)
                     .withListener(this)
                     .check()
             }
-
         }
     }
 
@@ -190,7 +160,7 @@ class EditProfileActivity : AppCompatActivity(), PermissionListener {
         when (resultCode) {
             Activity.RESULT_OK -> {
                 //Image Uri will not be null for RESULT_OK
-                statusAdd = true
+                statusAdd = false
                 filePath = data?.data!!
 
                 Glide.with(this)
@@ -198,8 +168,37 @@ class EditProfileActivity : AppCompatActivity(), PermissionListener {
                     .apply(RequestOptions.circleCropTransform())
                     .into(iv_profile)
 
+                val progressDialog = ProgressDialog(this)
+                progressDialog.setTitle("Mengganti Profile...")
+                progressDialog.show()
 
-                btn_add.setImageResource(R.drawable.ic_btn_delete)
+                val ref = storageReference.child("images/"+ UUID.randomUUID().toString())
+                ref.putFile(filePath)
+                    .addOnSuccessListener {
+                        progressDialog.dismiss()
+                        Toast.makeText(this@EditProfileActivity,"Uploaded",
+                            Toast.LENGTH_SHORT).show()
+
+                        mDatabase = FirebaseDatabase.getInstance().getReference("User")
+                            .child(preferences.getValues("username")!!)
+
+                        ref.downloadUrl.addOnSuccessListener {
+                            val hashMap: HashMap<String, String> = HashMap()
+                            hashMap["url"] = it.toString()
+                            preferences.setValues("url", it.toString())
+                            mDatabase.updateChildren(hashMap as Map<String, Any>)
+                        }
+                    }
+                    .addOnFailureListener { e ->
+                        progressDialog.dismiss()
+                        Toast.makeText(this@EditProfileActivity,
+                            "Failed"+ e.message, Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnProgressListener { taskSnapshot ->
+                        val progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot
+                            .totalByteCount
+                        progressDialog.setMessage("Uploaded " + progress.toInt() + "%")
+                    }
             }
             ImagePicker.RESULT_ERROR -> {
                 Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()

@@ -13,6 +13,20 @@ data class getAbout (
 
 @Parcelize
 data class addAbout (
-    var url: String ?= ""
-//    var desc2: String ?= ""
+    var nama : String ?= "",
+    var nomor_induk : String ? ="",
+    var email : String ?= "",
+    var jurusan : String ?= "",
+    var universitas : String ?= "",
+    var url : String ?= ""
         ) : Parcelable
+
+@Parcelize
+data class getDosen (
+    var nama : String ?= "",
+    var nomor_induk : String ? ="",
+    var email : String ?= "",
+    var jurusan : String ?= "",
+    var universitas : String ?= "",
+    var url : String ?= ""
+) : Parcelable

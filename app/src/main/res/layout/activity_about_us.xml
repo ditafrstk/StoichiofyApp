@@ -1,85 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUs.AboutUsActivity"
-    android:paddingBottom="32dp"
-    >
-
+    tools:context=".AboutUs.AboutUsActivity">
 
     <ImageView
-        android:id="@+id/uin"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/logo_uin"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic__arrow_back_24"/>
 
-    <ImageView
-        android:id="@+id/iv_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginStart="36dp"
-        android:src="@drawable/ic__arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    
-    
     <TextView
-        android:id="@+id/learnOutcome"
+        android:id="@+id/tvTentang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/uin"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textStyle="bold"
+        android:text="Tentang Kami"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/identitasPengarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toBottomOf="@+id/tvTentang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/raleway_medium"
-        android:text="Learning outcome"/>
+        android:text="Identitas Pengarang Buku"
+        android:layout_marginTop="20dp"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDosen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identitasPengarang"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivPengarang"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/user_pic"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNamaPengarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Lorem"/>
+            <TextView
+                android:id="@+id/tvNomorIndukPengarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_light"
+                android:text="Lorem"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvJurusanPengarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Lorem"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvUniversitasPengarang"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Lorem"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvEmailPengarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_light"
+                android:text="Lorem"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"/>
+
+
+        </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/perspektifIslam"
+        android:id="@+id/identitasPengembang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/learnOutcome"
+        app:layout_constraintTop_toBottomOf="@+id/cvDosen"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Identitas Pengembang"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPengembang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identitasPengembang"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivPengembang"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/user_pic"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNamaPengembang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Lorem"/>
+            <TextView
+                android:id="@+id/tvNomorIndukPengembang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_light"
+                android:text="Lorem"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvJurusanPengembang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Lorem"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvUniversitasPengembang"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Lorem"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvEmailPengembang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_light"
+                android:text="Lorem"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"/>
+
+
+        </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvDosenPembimbing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toBottomOf="@+id/cvPengembang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Stoikiometri dalam Perspektif Islam"
-        android:fontFamily="@font/raleway_medium"/>
-
-
-    <TextView
-        android:id="@+id/persamaanKimia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Persamaan Kimia :"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/perspektifIslam"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"/>
+        android:text="Dosen Pembimbing"
+        android:layout_marginTop="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_aboutUs"
+        android:id="@+id/rvDosenPembimbing"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/persamaanKimia"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/item_about_us"
-
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvDosenPembimbing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_card_about" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>

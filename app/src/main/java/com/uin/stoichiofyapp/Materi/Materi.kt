@@ -17,7 +17,10 @@ data class Materi (
 @Parcelize
 data class Bab (
     var judul:String ?= "",
-    var url : String ?= ""
+    var url : String ?= "",
+    var tujuan : String ?= "",
+    var tujuan2 : String ?= "",
+    var tujuan3 : String ?= ""
 ) : Parcelable
 
 @Parcelize

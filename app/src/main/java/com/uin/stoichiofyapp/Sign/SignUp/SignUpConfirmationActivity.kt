@@ -101,7 +101,7 @@ class SignUpConfirmationActivity : AppCompatActivity() , PermissionListener {
 
 
                         ref.downloadUrl.addOnSuccessListener {
-                            updateData(it. toString())
+                            updateData(it.toString())
                         }
                         // Update Data, FayFay Version
 //                            val hashMap: HashMap<String, String> = HashMap()

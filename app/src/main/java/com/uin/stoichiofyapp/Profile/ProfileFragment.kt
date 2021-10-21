@@ -48,13 +48,13 @@ class ProfileFragment : Fragment() {
         }
 
         aboutUs.setOnClickListener {
-//            startActivity(Intent(activity, AboutUsActivity::class.java))
+            startActivity(Intent(activity, AboutUsActivity::class.java))
         }
 
         logout.setOnClickListener {
             startActivity(Intent(activity, SignOutActivity::class.java))
         }
-
+//
         add_data.setOnClickListener {
             startActivity(Intent(activity, AddActivity::class.java))
         }

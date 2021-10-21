@@ -12,6 +12,7 @@ import com.uin.stoichiofyapp.Latihan.LatihanActivity
 import com.uin.stoichiofyapp.Materi.MateriActivity
 import com.uin.stoichiofyapp.R
 import com.uin.stoichiofyapp.ReferensiActivity
+import com.uin.stoichiofyapp.Trivia.TriviaActivity
 import kotlinx.android.synthetic.main.item_home_one.view.*
 
 class CategoryAdapter(private var data: List<Category>)
@@ -64,6 +65,11 @@ class CategoryAdapter(private var data: List<Category>)
                 }
                 "Petunjuk Penggunaan" -> {
 
+                }
+                "Trivia" -> {
+                    itemView.setOnClickListener{
+                        context.startActivity(Intent(context, TriviaActivity::class.java))
+                    }
                 }
             }
 

@@ -10,6 +10,9 @@ import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
 import androidx.core.content.ContextCompat
 import com.google.android.material.card.MaterialCardView
 import com.uin.stoichiofyapp.R
@@ -23,10 +26,10 @@ class LatihanActivity : AppCompatActivity() , View.OnClickListener{
     private var mCorrectAnswers: Int = 0
     private var mUserName: String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_latihan)
-
         mQuestionsList = Constants.getQuestions()
 
         setQuestion()

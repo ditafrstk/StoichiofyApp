@@ -25,6 +25,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
         <activity
+            android:name=".Trivia.subTrivia.SubTriviaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Trivia.TriviaActivity"
+            android:exported="true" />
+        <activity
             android:name=".Latihan.ResultActivity"
             android:exported="true" />
         <activity
@@ -56,6 +62,9 @@
             android:exported="true" />
         <activity
             android:name=".Silabus.SilabusActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Trivia.subTrivia.SubTriviaActivityJava"
             android:exported="true" />
         <activity
             android:name=".PLO.PLOActivity"

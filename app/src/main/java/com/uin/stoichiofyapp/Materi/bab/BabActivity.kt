@@ -13,7 +13,9 @@ import com.uin.stoichiofyapp.Materi.Materi
 import com.uin.stoichiofyapp.R
 import com.uin.stoichiofyapp.Utils.Preferences
 import kotlinx.android.synthetic.main.activity_bab.*
+import kotlinx.android.synthetic.main.activity_show_bab.*
 import kotlinx.android.synthetic.main.fragment_sub_materi.*
+import java.io.InputStream
 
 class BabActivity : AppCompatActivity() {
 
@@ -53,10 +55,13 @@ class BabActivity : AppCompatActivity() {
                 for (dataSnapshot in snapshot.children){
                     for(getchild in dataSnapshot.children){
                         val bab = getchild.getValue(Bab::class.java)
-                        val judul = bab?.judul
+                        val title = bab?.judul
+                        val tujuan = bab?.tujuan
+                        val tujuan2 = bab?.tujuan2
+                        val tujuan3 = bab?.tujuan3
                         val url = bab?.url
 
-                        databab.add(setData(judul!!, url!!))
+                        databab.add(setData(title!!, url!!, tujuan!!, tujuan2!!, tujuan3!!))
                     }
 
                 }
@@ -64,8 +69,11 @@ class BabActivity : AppCompatActivity() {
                     val intent = Intent(applicationContext,
                     showBabActivity::class.java)
                         .putExtra("pdf", it.url)
-                        .putExtra("desc", it.judul)
+                        .putExtra("title", it.judul)
                         .putExtra("bab", bab)
+                        .putExtra("tujuan", it.tujuan)
+                        .putExtra("tujuan2", it.tujuan2)
+                        .putExtra("tujuan3", it.tujuan3)
                         .putExtra("judul", judul)
                     startActivity(intent)
                 }
@@ -82,10 +90,13 @@ class BabActivity : AppCompatActivity() {
     }
 
 
-    private fun setData(judul: String, url: String) : Bab {
+    private fun setData(judul: String, url: String, tujuan: String, tujuan2: String, tujuan3: String) : Bab {
         val data = Bab(
             judul,
-            url
+            url,
+            tujuan,
+            tujuan2,
+            tujuan3
         )
         return data
     }

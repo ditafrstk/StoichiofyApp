@@ -3,6 +3,8 @@ package com.uin.stoichiofyapp.Latihan
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
 import com.uin.stoichiofyapp.Home.HomeActivity
 import com.uin.stoichiofyapp.R
 import kotlinx.android.synthetic.main.activity_result.*
