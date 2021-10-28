@@ -3,15 +3,25 @@ package com.uin.stoichiofyapp.Trivia.subTrivia;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.uin.stoichiofyapp.R;
+
+import java.lang.reflect.Member;
 
 public class SubTriviaActivityJava extends AppCompatActivity {
 
@@ -21,6 +31,7 @@ public class SubTriviaActivityJava extends AppCompatActivity {
     SimpleExoPlayer player;
     PlayerView playerUI;
     boolean isActivityRunning = false;
+    String url,title,subtitle;
 
 
     @Override
@@ -36,78 +47,59 @@ public class SubTriviaActivityJava extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance();
         reference = mDatabase.getReference("Trivia").child(key).child("video");
 
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+        ImageView btn_back = findViewById(R.id.btnBack);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
+        FirebaseRecyclerOptions<member> options =
+                new FirebaseRecyclerOptions.Builder<member>()
+                        .setQuery(reference, member.class).build();
+
         FirebaseRecyclerAdapter<member, ViewHolder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<member, ViewHolder>(
-                        member.class,
-                        R.layout.item_subtrivia,
-                        ViewHolder.class,
-                        reference
-                ) {
+                new FirebaseRecyclerAdapter<member, ViewHolder>(options) {
                     @Override
-                    protected void populateViewHolder(ViewHolder viewHolder, member member, int i) {
-                        viewHolder.setVideo(getApplication(), member.getTitle(), member.getUrl(), member.getSubtitle());
-                        if (viewHolder.releasePlayer()){
-                            releasePlayer();
-                        }
+                    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull member model) {
+                        holder.setExoPlayer(getApplication(), model.getTitle(), model.getUrl(), model.getSubtitle());
+
+                        Log.v("1510", "Datanya = "+model.getTitle());
+                        holder.setOnClickListener(new ViewHolder.ClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                url = getItem(position).getUrl();
+                                title = getItem(position).getTitle();
+                                subtitle = getItem(position).getSubtitle();
+                                Intent intent = new Intent(SubTriviaActivityJava.this, FullscreenActivity.class);
+                                intent.putExtra("url", url);
+                                intent.putExtra("title", title);
+                                intent.putExtra("subtitle", subtitle);
+                                startActivity(intent);
+
+                            }
+                        });
+
+
 
                     }
+
+                    @NonNull
+                    @Override
+                    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                        View view = LayoutInflater.from(parent.getContext())
+                                .inflate(R.layout.item_subtrivia, parent, false);
+                        return new ViewHolder(view);
+                    }
                 };
+        firebaseRecyclerAdapter.startListening();
         mRecylerView.setAdapter(firebaseRecyclerAdapter);
     }
 
-//    private void releasePlayer(){
-//        if (player != null){
-//            player.stop();
-//            player.getPlayWhenReady();
-//            player.getCurrentPosition();
-//            player.getCurrentWindowIndex();
-//            player = null;
-//        }
-//    }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        isActivityRunning = false;
-        releasePlayer();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        isActivityRunning = false;
-        releasePlayer();
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        releasePlayer();
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        releasePlayer();
-    }
-
-    private void releasePlayer(){
-        if (player != null){
-            player.stop();
-            player.release();
-            player.clearVideoSurface();
-            playerUI.getPlayer().release();;
-
-
-            player = null;
-            playerUI =null;
-        }
-    }
 
 
 }

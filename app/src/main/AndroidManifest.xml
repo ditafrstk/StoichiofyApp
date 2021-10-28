@@ -25,6 +25,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
         <activity
+            android:name=".Trivia.subTrivia.FullscreenActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true" />
+        <activity
+            android:name=".Guide.GuideActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Bookmark.SubBookmarkActivity"
+            android:exported="true" />
+        <activity
             android:name=".Trivia.subTrivia.SubTriviaActivity"
             android:exported="true" />
         <activity
@@ -65,9 +75,13 @@
             android:exported="true" />
         <activity
             android:name=".Trivia.subTrivia.SubTriviaActivityJava"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".PLO.PLOActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Bookmark.BookmarkActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"

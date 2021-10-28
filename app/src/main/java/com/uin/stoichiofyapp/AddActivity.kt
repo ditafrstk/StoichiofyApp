@@ -5,13 +5,21 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 import com.uin.stoichiofyapp.AboutUs.addAbout
+import com.uin.stoichiofyapp.Utils.Preferences
 import kotlinx.android.synthetic.main.activity_add.*
+
+
+
+
 
 class AddActivity : AppCompatActivity() {
 
+
+
     val database = FirebaseDatabase.getInstance()
-    val myRef = database.getReference("About").child("Dosen Pembimbing")
+    val myRef = database.getReference("User")
     val arrayUser = arrayListOf<addAbout>()
+    lateinit var preferences: Preferences
 
     lateinit var addData : String
     lateinit var addData2: String
@@ -24,11 +32,15 @@ class AddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
+        preferences = Preferences(this)
+
+
 
 
 //        val desc = et_data.text.toString()
 
         btn_add.setOnClickListener {
+            myRef.child(preferences.getValues("username")!!).removeValue()
 
             addData = et_data.text.toString()
             addData2 = et_data2.text.toString()

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.uin.stoichiofyapp.Dashboard.Pembelajaran.Category
+import com.uin.stoichiofyapp.Guide.GuideActivity
 import com.uin.stoichiofyapp.Latihan.LatihanActivity
 import com.uin.stoichiofyapp.Materi.MateriActivity
 import com.uin.stoichiofyapp.R
@@ -64,6 +65,9 @@ class CategoryAdapter(private var data: List<Category>)
                     }
                 }
                 "Petunjuk Penggunaan" -> {
+                    itemView.setOnClickListener {
+                        context.startActivity(Intent(context, GuideActivity::class.java))
+                    }
 
                 }
                 "Trivia" -> {

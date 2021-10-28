@@ -24,6 +24,10 @@ class TriviaActivity : AppCompatActivity() {
         mDatabase = FirebaseDatabase.getInstance().getReference("Trivia")
         rvTrivia.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
+        iv_back.setOnClickListener {
+            onBackPressed()
+        }
+
         getData()
     }
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Trivia.subTrivia.FullscreenActivity">
+
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exoplayer_fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="5dp"
+        app:use_controller="true"
+        app:resize_mode="fill"
+        app:controller_layout_id="@layout/exoplayer_custom_controls"
+        />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Lorem"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Lorem"
+        android:fontFamily="@font/raleway_light"
+        />
+
+</LinearLayout>

@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".Trivia.subTrivia.SubTriviaActivityJava">
 
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic__arrow_back_24"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_subtrivia"
         android:layout_width="match_parent"
@@ -16,6 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
 
 
         />

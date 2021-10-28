@@ -57,6 +57,8 @@ class DashboardFragment : Fragment() {
             .into(iv_profile)
 
 
+
+
         rv_home.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         rv_dashboard.layoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
         getData()

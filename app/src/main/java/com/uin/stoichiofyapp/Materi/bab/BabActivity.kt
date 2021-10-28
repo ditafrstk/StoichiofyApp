@@ -22,6 +22,7 @@ class BabActivity : AppCompatActivity() {
     private lateinit var preferences: Preferences
     private lateinit var mDatabase: DatabaseReference
 
+
     private var databab = ArrayList<Bab>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,33 +42,36 @@ class BabActivity : AppCompatActivity() {
 
         preferences = Preferences(this)
         mDatabase = FirebaseDatabase.getInstance().getReference("Materi")
-            .child(data!!.key!!)
+            .child(data.key!!)
 
         rv_bab.layoutManager = GridLayoutManager(this, 1, RecyclerView.VERTICAL, false)
 
-        getData(data.bab!!, data.judul!!)
+        getData(data.bab!!, data.judul!!, data.key!!)
     }
 
-    private fun getData(bab: String, judul: String) {
+    private fun getData(bab: String, judul: String, key: String) {
         mDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 databab.clear()
                 for (dataSnapshot in snapshot.children){
                     for(getchild in dataSnapshot.children){
                         val bab = getchild.getValue(Bab::class.java)
+                        val key = getchild.key.toString()
                         val title = bab?.judul
                         val tujuan = bab?.tujuan
                         val tujuan2 = bab?.tujuan2
                         val tujuan3 = bab?.tujuan3
                         val url = bab?.url
 
-                        databab.add(setData(title!!, url!!, tujuan!!, tujuan2!!, tujuan3!!))
+                        databab.add(setData(key, title!!, url!!, tujuan!!, tujuan2!!, tujuan3!!))
                     }
 
                 }
                 rv_bab.adapter = BabAdapter(databab) {
                     val intent = Intent(applicationContext,
                     showBabActivity::class.java)
+                        .putExtra("keyParent", key)
+                        .putExtra("keyChild", it.key)
                         .putExtra("pdf", it.url)
                         .putExtra("title", it.judul)
                         .putExtra("bab", bab)
@@ -90,8 +94,9 @@ class BabActivity : AppCompatActivity() {
     }
 
 
-    private fun setData(judul: String, url: String, tujuan: String, tujuan2: String, tujuan3: String) : Bab {
+    private fun setData(key: String, judul: String, url: String, tujuan: String, tujuan2: String, tujuan3: String) : Bab {
         val data = Bab(
+            key,
             judul,
             url,
             tujuan,

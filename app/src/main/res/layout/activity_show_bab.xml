@@ -53,7 +53,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_save"
+        app:layout_constraintEnd_toStartOf="@+id/btn_wish"
         android:fontFamily="@font/poppins_bold"
         android:text="Pendahuluan"
         android:layout_marginStart="10dp"
@@ -153,14 +153,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_save"
+    <ImageButton
+        android:id="@+id/btn_wish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_checked"
+        android:src="@drawable/ic_baseline_turned_in_not_24"
+        android:backgroundTint="#FFFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"
-        />
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Wishlist" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

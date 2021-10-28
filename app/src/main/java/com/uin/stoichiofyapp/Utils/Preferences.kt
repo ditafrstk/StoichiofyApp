@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class Preferences(val context: Context) {
+
     companion object {
         const val MEETING_PREF = "USER_PREF"
     }

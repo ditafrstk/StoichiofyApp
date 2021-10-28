@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_background_grey"
+    android:padding="15dp"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/tvBookmark"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/poppins_bold"
+        />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_btn_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -103,6 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="tambah data"
+            android:visibility="gone"
             android:textColor="@color/colorBlack"
             android:fontFamily="@font/raleway_bold"
             android:layout_marginTop="12pt"/>

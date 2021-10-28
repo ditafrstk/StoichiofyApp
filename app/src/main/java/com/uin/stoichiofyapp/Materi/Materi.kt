@@ -16,6 +16,7 @@ data class Materi (
 
 @Parcelize
 data class Bab (
+    val key : String ?= "",
     var judul:String ?= "",
     var url : String ?= "",
     var tujuan : String ?= "",

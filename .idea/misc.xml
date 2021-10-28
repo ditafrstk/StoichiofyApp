@@ -37,6 +37,8 @@
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_bab.xml" value="0.36666666666666664" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_confirm.xml" value="0.2" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_fullscreen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_guide.xml" value="0.1" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_java.xml" value="0.17395833333333333" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_latihan.xml" value="0.22" />
@@ -50,17 +52,20 @@
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_referensi.xml" value="0.36666666666666664" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_result.xml" value="0.3482789855072464" />
-        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_show_bab.xml" value="0.365625" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_show_bab.xml" value="0.5118434603501545" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_sign_up.xml" value="0.5" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_silabus.xml" value="0.14791666666666667" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_sub_bookmark.xml" value="0.33" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_sub_trivia.xml" value="0.36666666666666664" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/activity_trivia.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/exoplayer_custom_controls.xml" value="0.36666666666666664" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_dashboard.xml" value="0.16530797101449277" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_materi.xml" value="0.17831813576494426" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_profile.xml" value="0.26485568760611206" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/fragment_sub_materi.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_about_us.xml" value="0.67" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_bookmark.xml" value="0.5309278350515464" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_card_about.xml" value="0.3333333333333333" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_home_one.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/item_home_two.xml" value="0.67" />
@@ -72,6 +77,8 @@
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/list_materi.xml" value="0.22" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/layout/sub_materi.xml" value="0.17831813576494426" />
         <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/menu/bottomappbar_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.17604166666666668" />
+        <entry key="..\:/Project Android Studio/Stoichiofy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.17604166666666668" />
       </map>
     </option>
   </component>
