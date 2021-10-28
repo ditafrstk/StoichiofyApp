@@ -22,8 +22,9 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/raleway_medium"
+        android:fontFamily="@font/poppins_bold"
         android:text="Lorem"
+        android:textSize="18sp"
         android:layout_margin="5dp"/>
 
     <TextView
@@ -32,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="Lorem"
-        android:fontFamily="@font/raleway_light"
+        android:fontFamily="@font/poppins_semibold"
         />
 
 </LinearLayout>

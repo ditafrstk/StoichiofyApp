@@ -68,9 +68,6 @@ public class FullscreenActivity extends AppCompatActivity {
                 if (fullscreen){
                     fullscreenButton.setImageDrawable(ContextCompat.getDrawable(FullscreenActivity.this, R.drawable.ic_fullscreen_expand));
                     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-//                    if (getSupportActionBar() != null){
-//                        getSup
-//                    }
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) playerView.getLayoutParams();
                     params.width = params.MATCH_PARENT;
@@ -114,7 +111,7 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (Util.SDK_INT >= 26){
+        if (Util.SDK_INT >= 24){
             initializePlayer();
         }
     }
@@ -122,7 +119,7 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (Util.SDK_INT >= 26 || player == null){
+        if (Util.SDK_INT >= 24 || player == null){
 //            initializePlayer();
         }
     }
@@ -130,7 +127,7 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (Util.SDK_INT > 26){
+        if (Util.SDK_INT > 24){
             releasePlayer();
         }
 
@@ -139,7 +136,7 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (Util.SDK_INT > 26){
+        if (Util.SDK_INT > 24){
             releasePlayer();
         }
 
