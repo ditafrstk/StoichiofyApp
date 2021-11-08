@@ -1,13 +1,17 @@
 package com.uin.stoichiofyapp.Trivia.subTrivia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,6 +26,8 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 import com.uin.stoichiofyapp.R;
+
+import okhttp3.internal.http2.ConnectionShutdownException;
 
 public class FullscreenActivity extends AppCompatActivity {
 
@@ -40,12 +46,6 @@ public class FullscreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
-
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setTitle("Fullscreen");
-//
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-//        actionBar.setDisplayShowHomeEnabled(true);
 
         playerView = findViewById(R.id.exoplayer_fullscreen);
         tvTitle = findViewById(R.id.tvTitle);
@@ -89,7 +89,7 @@ public class FullscreenActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+            }
 
     private MediaSource buildMediaSource (Uri uri){
         DataSource.Factory datasource =
@@ -111,35 +111,105 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (Util.SDK_INT >= 24){
-            initializePlayer();
+        if (!ScreenReceiver.wasScreenOn) {
+            // THIS IS WHEN ONRESUME() IS CALLED DUE TO A SCREEN STATE CHANGE
+            if (Util.SDK_INT >= 24 || player == null){
+                releasePlayer();
+            }
+            System.out.println("SCREEN TURNED ON");
+        } else {
+            if (Util.SDK_INT >= 24 || player == null){
+                initializePlayer();
+            }
+            // THIS IS WHEN ONRESUME() IS CALLED WHEN THE SCREEN STATE HAS NOT CHANGED
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (ScreenReceiver.wasScreenOn) {
+            // THIS IS THE CASE WHEN ONPAUSE() IS CALLED BY THE SYSTEM DUE TO A SCREEN STATE CHANGE
+            if (Util.SDK_INT > 24){
+                initializePlayer();
+            }
+            System.out.println("SCREEN TURNED OFF");
+        } else {
+            if (Util.SDK_INT > 24){
+                releasePlayer();
+            }
+            // THIS IS WHEN ONPAUSE() IS CALLED WHEN THE SCREEN STATE HAS NOT CHANGED
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (Util.SDK_INT >= 24 || player == null){
-//            initializePlayer();
+        if (!ScreenReceiver.wasScreenOn) {
+            // THIS IS WHEN ONRESUME() IS CALLED DUE TO A SCREEN STATE CHANGE
+            if (Util.SDK_INT >= 24 || player == null){
+                releasePlayer();
+            }
+            System.out.println("SCREEN TURNED ON");
+        } else {
+            if (Util.SDK_INT >= 24 || player == null){
+                initializePlayer();
+            }
+            // THIS IS WHEN ONRESUME() IS CALLED WHEN THE SCREEN STATE HAS NOT CHANGED
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (Util.SDK_INT > 24){
-            releasePlayer();
+        if (ScreenReceiver.wasScreenOn) {
+            // THIS IS THE CASE WHEN ONPAUSE() IS CALLED BY THE SYSTEM DUE TO A SCREEN STATE CHANGE
+            if (Util.SDK_INT > 24){
+                initializePlayer();
+            }
+            System.out.println("SCREEN TURNED OFF");
+        } else {
+            if (Util.SDK_INT > 24){
+                releasePlayer();
+            }
+            // THIS IS WHEN ONPAUSE() IS CALLED WHEN THE SCREEN STATE HAS NOT CHANGED
         }
+
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if (Util.SDK_INT > 24){
-            releasePlayer();
+        if (ScreenReceiver.wasScreenOn) {
+            // THIS IS THE CASE WHEN ONPAUSE() IS CALLED BY THE SYSTEM DUE TO A SCREEN STATE CHANGE
+            if (Util.SDK_INT > 24){
+                initializePlayer();
+            }
+            System.out.println("SCREEN TURNED OFF");
+        } else {
+            if (Util.SDK_INT > 24){
+                releasePlayer();
+            }
+            // THIS IS WHEN ONPAUSE() IS CALLED WHEN THE SCREEN STATE HAS NOT CHANGED
         }
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (ScreenReceiver.wasScreenOn) {
+            // THIS IS THE CASE WHEN ONPAUSE() IS CALLED BY THE SYSTEM DUE TO A SCREEN STATE CHANGE
+            if (Util.SDK_INT > 24){
+                initializePlayer();
+            }
+            System.out.println("SCREEN TURNED OFF");
+        } else {
+            if (Util.SDK_INT > 24){
+                releasePlayer();
+            }
+            // THIS IS WHEN ONPAUSE() IS CALLED WHEN THE SCREEN STATE HAS NOT CHANGED
+        }
     }
 
     private void releasePlayer(){
@@ -161,4 +231,30 @@ public class FullscreenActivity extends AppCompatActivity {
         setResult(RESULT_OK, intent);
         finish();
     }
+
+//    @Override
+//    public boolean onKeyUp(int keyCode, KeyEvent event) {
+//        if (event.getKeyCode() == KeyEvent.KEYCODE_POWER){
+//            if (Util.SDK_INT > 24){
+//                player.stop();
+//                releasePlayer();
+//            }
+//            return true;
+//        }
+//        return super.onKeyUp(keyCode, event);
+//    }
+//
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (event.getKeyCode() == KeyEvent.KEYCODE_POWER){
+//            if (Util.SDK_INT > 24){
+//                player.stop();
+//                releasePlayer();
+//            }
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
+
+
 }

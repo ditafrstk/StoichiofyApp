@@ -140,8 +140,8 @@ object Constants {
                     "Sedangkan oksigen dari dekomposisi termal kalium klorat (belum setara): KClO3 (s) → KCl(s) + O2(g)\n" +
                     "Untuk membuat 200 L udara tiruan pada tekanan 0,84 atm dan 273 K, massa (dalam gram) amonium dikromat dan kalium klorat yang dibutuhkan berturut-turut adalah ... (KSM Provinsi 2018)\n" +
                     "tersebut adalah …",
-            "1,2 × 102 dan 1,5 × 103", "1,2 × 103 dan 1,5 × 102",
-            "1,5 × 103 dan 1,2 × 102", "1,5 × 102 dan 1,2 × 103", "1,5 × 102 dan 1,5 × 103", 4
+            "1,38 X 101 L ", "3,8 X 102 L",
+            "6,61 X 102 L ", "3,79 X 102 L ", "4,52 X 102 L", 4
         )
         questionsList.add(que12)
 

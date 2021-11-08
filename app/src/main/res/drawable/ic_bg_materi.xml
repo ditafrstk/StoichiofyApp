@@ -25,10 +25,10 @@
       </aapt:attr>
     </path>
   </group>
-  <path
-      android:pathData="M44,44m-9,0a9,9 0,1 1,18 0a9,9 0,1 1,-18 0"
-      android:fillColor="#FFF2CB"/>
-  <path
-      android:pathData="M72,44m-15,0a15,15 0,1 1,30 0a15,15 0,1 1,-30 0"
-      android:fillColor="#FBD460"/>
+<!--  <path-->
+<!--      android:pathData="M44,44m-9,0a9,9 0,1 1,18 0a9,9 0,1 1,-18 0"-->
+<!--      android:fillColor="#FFF2CB"/>-->
+<!--  <path-->
+<!--      android:pathData="M72,44m-15,0a15,15 0,1 1,30 0a15,15 0,1 1,-30 0"-->
+<!--      android:fillColor="#FBD460"/>-->
 </vector>

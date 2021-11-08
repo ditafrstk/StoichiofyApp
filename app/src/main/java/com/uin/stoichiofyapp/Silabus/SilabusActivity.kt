@@ -15,7 +15,7 @@ class SilabusActivity : AppCompatActivity() {
 
         pdfView = findViewById(R.id.pdfView)
 
-        pdfView.fromAsset("silabus.pdf")
+        pdfView.fromAsset("RPS.pdf")
             .enableDoubletap(true)
             .load()
 

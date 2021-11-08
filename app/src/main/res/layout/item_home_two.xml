@@ -12,22 +12,22 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/iv_home"
             android:layout_width="match_parent"
             android:layout_height="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             app:srcCompat="@drawable/txt" />
 
         <TextView
             android:id="@+id/tv_agenda"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/raleway_medium"
             android:gravity="center"
             android:text="Peta Konsep"

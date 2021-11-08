@@ -65,7 +65,7 @@ class PembelajaranAdapter(private var data: List<Pembelajaran>,
                         context.startActivity(intent)
                     }
                 }
-                "Silabus Pembelajaran" -> {
+                "Rencana Pembelajaran Semester" -> {
                     itemView.setOnClickListener {
                         val intent = Intent(context,
                             SilabusActivity::class.java)

@@ -64,23 +64,12 @@
             android:layout_marginTop="32dp"/>
 
         <TextView
-            android:id="@+id/tvSelamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selamat kamu dapat menjawab"
-            android:textColor="@color/colorGrey"
-            android:fontFamily="@font/raleway_medium"
-            android:textSize="24sp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_marginTop="32dp"/>
-
-        <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="15 Jawaban benar"
             android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:textColor="@color/colorGrey"
             android:fontFamily="@font/raleway_medium"
             android:textSize="26sp"
